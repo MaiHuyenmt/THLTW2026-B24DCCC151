@@ -114,13 +114,13 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
 		),
 
 		childrenRender: (dom) => (
-			<OIDCBounder>
-				<ErrorBoundary>
-					{/* <TechnicalSupportBounder> */}
-					<OneSignalBounder>{dom}</OneSignalBounder>
-					{/* </TechnicalSupportBounder> */}
-				</ErrorBoundary>
-			</OIDCBounder>
+				<OIDCBounder>
+					<ErrorBoundary>
+						{/* <TechnicalSupportBounder> */}
+						<OneSignalBounder>{dom}</OneSignalBounder>
+						{/* </TechnicalSupportBounder> */}
+					</ErrorBoundary>
+				</OIDCBounder>
 		),
 		menuHeaderRender: undefined,
 		...initialState?.settings,

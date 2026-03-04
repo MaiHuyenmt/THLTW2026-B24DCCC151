@@ -1,4 +1,4 @@
-export default [
+module.exports = [
   {
     path: '/',
     redirect: '/products',
@@ -8,5 +8,15 @@ export default [
     name: 'Quản lý sản phẩm',
     icon: 'ShopOutlined',
     component: './ProductManagement',
+  },
+  {
+    path: '/game',
+    name: 'Game',
+    component: './Game',
+  },
+  {
+    path: '/study',
+    name: 'Study',
+    component: './Study',
   },
 ];
