@@ -9,6 +9,7 @@ module.exports = [
     icon: 'ShopOutlined',
     component: './ProductManagement',
   },
+  // Bai thuc hanh 01
   {
     path: '/game',
     name: 'Game',
@@ -18,5 +19,16 @@ module.exports = [
     path: '/study',
     name: 'Study',
     component: './Study',
+  },
+  //Bai thuc hanh 02
+  {
+    path: '/bai1',
+    name: 'Oẳn tù tì',
+    component: './Bai1',
+  },
+  {
+    path: '/bai2',
+    name: 'Ngân hàng câu hỏi',
+    component: './Bai2',
   },
 ];
