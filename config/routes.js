@@ -31,4 +31,10 @@ module.exports = [
     name: 'Ngân hàng câu hỏi',
     component: './Bai2',
   },
+  //Bai thuc hanh 03
+  {
+    path: '/TH03',
+    name: 'Quản lý đặt lịch',
+    component: './TH03',
+  }
 ];
