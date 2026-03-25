@@ -9,6 +9,12 @@ module.exports = [
     icon: 'ShopOutlined',
     component: './ProductManagement',
   },
+  {
+    path: '/vanbang',
+    name: 'Quản lý sổ văn bằng',
+    icon: 'BookOutlined',
+    component: './VanBang',
+  },
   // Bai thuc hanh 01
   {
     path: '/game',
@@ -31,10 +37,5 @@ module.exports = [
     name: 'Ngân hàng câu hỏi',
     component: './Bai2',
   },
-  //Bai thuc hanh 03
-  {
-    path: '/TH03',
-    name: 'Quản lý đặt lịch',
-    component: './TH03',
-  }
+  
 ];
