@@ -3,6 +3,7 @@ import {
   Button,
   Card,
   Col,
+  DatePicker,
   Descriptions,
   Form,
   Input,
@@ -20,6 +21,7 @@ import {
   Tooltip,
 } from 'antd';
 import { PlusOutlined, EditOutlined, DeleteOutlined, EyeOutlined, CheckCircleOutlined, CloseCircleOutlined, UnorderedListOutlined, BarChartOutlined } from '@ant-design/icons';
+import moment from 'moment';
 import ColumnChart from '@/components/Chart/ColumnChart';
 import type { ColumnsType } from 'antd/es/table';
 
@@ -270,6 +272,7 @@ const ClubManagement = () => {
                 clubForm.setFieldsValue({
                   ...record,
                   active: record.active ? 'true' : 'false',
+                  founded: record.founded ? moment(record.founded) : undefined,
                 });
               }}
             />
@@ -426,6 +429,7 @@ const ClubManagement = () => {
     const payload = {
       ...values,
       active: values.active === 'true',
+      founded: values.founded ? values.founded.format('YYYY-MM-DD') : values.founded,
     };
     if (editingClub) {
       setClubs((prev) => prev.map((item) => (item.id === editingClub.id ? { ...item, ...payload } : item)));
@@ -666,7 +670,7 @@ const ClubManagement = () => {
         footer={null}
         destroyOnClose
       >
-        <Form form={clubForm} layout='vertical' onFinish={handleSaveClub} initialValues={{ active: 'true' }}>
+        <Form form={clubForm} layout='vertical' onFinish={handleSaveClub} initialValues={{ active: 'true', founded: moment() }}>
           <Form.Item label='Avatar (URL)' name='avatar'>
             <Input placeholder='https://...' />
           </Form.Item>
@@ -674,9 +678,9 @@ const ClubManagement = () => {
             <Input />
           </Form.Item>
           <Form.Item label='Ngày thành lập' name='founded' rules={[{ required: true, message: 'Vui lòng chọn ngày thành lập' }]}> 
-            <Input placeholder='YYYY-MM-DD' />
+            <DatePicker format='YYYY-MM-DD' style={{ width: '100%' }} />
           </Form.Item>
-          <Form.Item label='Mô tả (HTML)' name='description' rules={[{ required: true, message: 'Vui lòng nhập mô tả' }]}> 
+          <Form.Item label='Mô tả (HTML)' name='description' rules={[{ required: true, message: 'Vui lòng nhập mô tả' }]}>
             <TextArea rows={4} />
           </Form.Item>
           <Form.Item label='Chủ nhiệm CLB' name='leader' rules={[{ required: true, message: 'Vui lòng nhập chủ nhiệm' }]}> 
