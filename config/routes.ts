@@ -42,6 +42,12 @@
 		icon: 'OrderedListOutlined',
 		component: './TodoList',
 	},
+	{
+		path: '/club-management',
+		name: 'Quản lý CLB',
+		icon: 'AppstoreOutlined',
+		component: './ClubManagement',
+	},
 
 	// DANH MUC HE THONG
 	// {
@@ -81,6 +87,7 @@
 	},
 	{
 		path: '/',
+		redirect: '/dashboard',
 	},
 	{
 		path: '/403',

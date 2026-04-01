@@ -1,7 +1,13 @@
 module.exports = [
   {
     path: '/',
-    redirect: '/products',
+    redirect: '/dashboard',
+  },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    icon: 'HomeOutlined',
+    component: './TrangChu',
   },
   {
     path: '/products',
@@ -15,6 +21,12 @@ module.exports = [
     icon: 'BookOutlined',
     component: './VanBang',
   },
+  {
+		path: '/club-management',
+		name: 'Quản lý CLB',
+		icon: 'AppstoreOutlined',
+		component: './ClubManagement',
+	},
   // Bai thuc hanh 01
   {
     path: '/game',
