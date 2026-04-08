@@ -1,0 +1,155 @@
+﻿.budgetManagement {
+  padding: 24px;
+}
+
+.headerCard,
+.progressCard,
+.detailCard,
+.categoryCard {
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(14, 30, 37, 0.08);
+}
+
+.headerCard {
+  margin-bottom: 24px;
+  padding: 24px;
+}
+
+.headerCard h2 {
+  margin: 0 0 10px;
+  font-size: 28px;
+}
+
+.headerCard p {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.limitBox {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.limitLabel {
+  margin-bottom: 12px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.progressCard {
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.progressTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
+.progressLabel {
+  color: rgba(0, 0, 0, 0.45);
+  margin-bottom: 4px;
+}
+
+.progressValue {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.progressPercent {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.alertRow {
+  margin-top: 16px;
+  color: #d4380d;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.categoryRow {
+  margin-bottom: 24px;
+}
+
+.categoryCard {
+  min-height: 170px;
+}
+
+.categoryIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  font-size: 20px;
+}
+
+.categoryInfo {
+  margin-bottom: 16px;
+}
+
+.categoryName {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.categoryAmount {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.detailTable {
+  display: grid;
+  gap: 16px;
+}
+
+.detailHeader,
+.detailRow,
+.detailTotal {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 18px;
+}
+
+.detailHeader {
+  background: #fafafa;
+  font-weight: 600;
+}
+
+.detailRow {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+}
+
+.detailTotal {
+  background: #fafafa;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .budgetManagement {
+    padding: 16px;
+  }
+
+  .progressTitle,
+  .detailHeader,
+  .detailRow,
+  .detailTotal {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .limitBox {
+    justify-content: flex-start;
+  }
+}

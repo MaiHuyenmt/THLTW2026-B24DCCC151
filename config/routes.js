@@ -49,5 +49,41 @@ module.exports = [
     name: 'Ngân hàng câu hỏi',
     component: './Bai2',
   },
+  // Ứng dụng lập kế hoạch du lịch
+  {
+    path: '/travel',
+    name: 'Du lịch',
+    icon: 'GlobalOutlined',
+    routes: [
+      {
+        path: '/travel',
+        redirect: '/travel/home',
+      },
+      {
+        path: '/travel/home',
+        name: 'Khám phá điểm đến',
+        icon: 'CompassOutlined',
+        component: './Home',
+      },
+      {
+        path: '/travel/trip-planner',
+        name: 'Tạo lịch trình',
+        icon: 'CalendarOutlined',
+        component: './TripPlanner',
+      },
+      {
+        path: '/travel/budget',
+        name: 'Quản lý ngân sách',
+        icon: 'DollarOutlined',
+        component: './BudgetManagement',
+      },
+      {
+        path: '/travel/admin',
+        name: 'Quản trị',
+        icon: 'SettingOutlined',
+        component: './Admin',
+      },
+    ],
+  },
   
 ];

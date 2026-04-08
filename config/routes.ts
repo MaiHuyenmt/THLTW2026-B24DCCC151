@@ -1,19 +1,7 @@
 ﻿export default [
 	{
-		path: '/user',
-		layout: false,
-		routes: [
-			{
-				path: '/user/login',
-				layout: false,
-				name: 'login',
-				component: './user/Login',
-			},
-			{
-				path: '/user',
-				redirect: '/user/login',
-			},
-		],
+		path: '/',
+		redirect: '/travel/home',
 	},
 
 	///////////////////////////////////
@@ -47,6 +35,41 @@
 		name: 'Quản lý CLB',
 		icon: 'AppstoreOutlined',
 		component: './ClubManagement',
+	},
+	{
+		path: '/travel',
+		name: 'Du lịch',
+		icon: 'GlobalOutlined',
+		routes: [
+			{
+				path: '/travel',
+				redirect: '/travel/home',
+			},
+			{
+				path: '/travel/home',
+				name: 'Khám phá điểm đến',
+				icon: 'CompassOutlined',
+				component: './Home',
+			},
+			{
+				path: '/travel/trip-planner',
+				name: 'Tạo lịch trình',
+				icon: 'CalendarOutlined',
+				component: './TripPlanner',
+			},
+			{
+				path: '/travel/budget',
+				name: 'Quản lý ngân sách',
+				icon: 'DollarOutlined',
+				component: './BudgetManagement',
+			},
+			{
+				path: '/travel/admin',
+				name: 'Quản trị',
+				icon: 'SettingOutlined',
+				component: './Admin',
+			},
+		],
 	},
 
 	// DANH MUC HE THONG

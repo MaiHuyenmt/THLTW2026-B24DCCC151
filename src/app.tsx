@@ -7,15 +7,12 @@ import { getIntl, getLocale, history } from 'umi';
 import type { RequestOptionsInit, ResponseError } from 'umi-request';
 import ErrorBoundary from './components/ErrorBoundary';
 // import LoadingPage from './components/Loading';
-import { OIDCBounder } from './components/OIDCBounder';
-import { unCheckPermissionPaths } from './components/OIDCBounder/constant';
 import OneSignalBounder from './components/OneSignalBounder';
 import TechnicalSupportBounder from './components/TechnicalSupportBounder';
 import NotAccessible from './pages/exception/403';
 import NotFoundContent from './pages/exception/404';
 import type { IInitialState } from './services/base/typing';
 import './styles/global.less';
-import { currentRole } from './utils/ip';
 
 /**  loading */
 export const initialStateConfig = {
@@ -69,11 +66,9 @@ export const request: RequestConfig = {
 export const layout: RunTimeLayoutConfig = ({ initialState }) => {
 	return {
 		unAccessible: (
-			<OIDCBounder>
-				<TechnicalSupportBounder>
-					<NotAccessible />
-				</TechnicalSupportBounder>
-			</OIDCBounder>
+			<TechnicalSupportBounder>
+				<NotAccessible />
+			</TechnicalSupportBounder>
 		),
 		noFound: <NotFoundContent />,
 		rightContentRender: () => <RightContent />,
@@ -84,17 +79,10 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
 		onPageChange: () => {
 			if (initialState?.currentUser) {
 				const { location } = history;
-				const isUncheckPath = unCheckPermissionPaths.some((path) => window.location.pathname.includes(path));
 
 				if (location.pathname === '/') {
 					history.replace('/dashboard');
-				} else if (
-					!isUncheckPath &&
-					currentRole &&
-					initialState?.authorizedPermissions?.length &&
-					!initialState?.authorizedPermissions?.find((item) => item.rsname === currentRole)
-				)
-					history.replace('/403');
+				}
 			}
 		},
 
@@ -114,15 +102,17 @@ export const layout: RunTimeLayoutConfig = ({ initialState }) => {
 		),
 
 		childrenRender: (dom) => (
-				<OIDCBounder>
-					<ErrorBoundary>
-						{/* <TechnicalSupportBounder> */}
-						<OneSignalBounder>{dom}</OneSignalBounder>
-						{/* </TechnicalSupportBounder> */}
-					</ErrorBoundary>
-				</OIDCBounder>
+			<ErrorBoundary>
+				<OneSignalBounder>{dom}</OneSignalBounder>
+			</ErrorBoundary>
 		),
 		menuHeaderRender: undefined,
+		menu: {
+			locale: false,
+			defaultOpenAll: false,
+			ignoreFlatMenu: false,
+			autoClose: false,
+		},
 		...initialState?.settings,
 	};
 };
