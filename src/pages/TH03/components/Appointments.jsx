@@ -7,7 +7,6 @@ import dayjs from "dayjs";
 
 export default function Appointments() {
 
-  // ================= LOAD LOCALSTORAGE =================
   const [data, setData] = useState(() => {
     const saved = localStorage.getItem("appointments");
     return saved ? JSON.parse(saved) : [];
@@ -16,18 +15,16 @@ export default function Appointments() {
   const [open, setOpen] = useState(false);
   const [form] = Form.useForm();
 
-  // ================= SAVE LOCALSTORAGE =================
   useEffect(() => {
     localStorage.setItem("appointments", JSON.stringify(data));
   }, [data]);
 
-  // ================= SUBMIT =================
   const submit = (values) => {
 
     const newData = {
       ...values,
-      date: values.date.format("DD/MM/YYYY"),   // 👈 FIX
-      time: values.time.format("HH:mm"),        // 👈 FIX
+      date: values.date.format("DD/MM/YYYY"),  
+      time: values.time.format("HH:mm"),       
       status: "Chờ duyệt"
     };
 
@@ -64,7 +61,7 @@ export default function Appointments() {
 
       <Modal
         title="Đặt lịch hẹn dịch vụ"
-        visible={open}   // nếu antd v5 thì đổi thành open
+        visible={open}  
         onCancel={() => setOpen(false)}
         onOk={() => form.submit()}
         okText="OK"

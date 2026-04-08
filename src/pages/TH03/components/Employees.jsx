@@ -63,7 +63,7 @@ useEffect(() => {
 }, [services]);
 
 
-  // ================= EMPLOYEE =================
+  //EMPLOYEE 
   const submitEmployee = (values) => {
     if (editingEmp) {
       setEmployees(
@@ -90,7 +90,7 @@ useEffect(() => {
     setEmployees(employees.filter((e) => e.id !== id));
   };
 
-  // ================= SERVICE =================
+  //SERVICE
   const submitService = (values) => {
     if (editingService) {
       setServices(
@@ -117,7 +117,7 @@ useEffect(() => {
     setServices(services.filter((s) => s.id !== id));
   };
 
-  // ================= COLUMNS =================
+  //COLUMNS
   const employeeColumns = [
     { title: "Nhân viên", dataIndex: "name" },
     { title: "Giới hạn/ngày", dataIndex: "limit" },
@@ -162,7 +162,7 @@ useEffect(() => {
   return (
     <>
       <Row gutter={16}>
-        {/* ================= EMPLOYEE CARD ================= */}
+        {/*  EMPLOYEE CARD */}
         <Col span={12}>
           <Card
             title={
@@ -188,7 +188,7 @@ useEffect(() => {
           </Card>
         </Col>
 
-        {/* ================= SERVICE CARD ================= */}
+        {/*  SERVICE CARD  */}
         <Col span={12}>
           <Card
             title={
@@ -215,7 +215,7 @@ useEffect(() => {
         </Col>
       </Row>
 
-      {/* ================= MODAL EMPLOYEE ================= */}
+      {/*  MODAL EMPLOYEE  */}
       <Modal
         title="Thêm nhân viên mới"
         visible={openEmp}
@@ -244,7 +244,7 @@ useEffect(() => {
         </Form>
       </Modal>
 
-      {/* ================= MODAL SERVICE ================= */}
+      {/*  MODAL SERVICE  */}
       <Modal
         title="Thêm dịch vụ mới"
         visible={openService}

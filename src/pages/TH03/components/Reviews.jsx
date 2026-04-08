@@ -4,13 +4,7 @@ import { useState } from "react";
 export default function Reviews() {
 
   const [reviews] = useState([
-    // Demo data (có thể xoá nếu muốn)
-    // {
-    //   customer: "Nguyễn Văn C",
-    //   employee: "Nguyễn Văn A",
-    //   rating: 4,
-    //   comment: "Dịch vụ tốt!"
-    // }
+  
   ]);
 
   return (
