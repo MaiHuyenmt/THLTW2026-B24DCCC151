@@ -22,6 +22,12 @@ module.exports = [
     component: './VanBang',
   },
   {
+    path: '/orders',
+    name: 'Quản lý đơn hàng',
+    icon: 'ShoppingCartOutlined',
+    component: './OrderManagement',
+  },
+  {
 		path: '/club-management',
 		name: 'Quản lý CLB',
 		icon: 'AppstoreOutlined',
