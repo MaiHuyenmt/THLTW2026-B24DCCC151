@@ -49,14 +49,14 @@ module.exports = [
         component: './Blog',
       },
       {
-        path: '/blog/:slug',
-        component: './Blog/[slug]',
-        hideInMenu: true,
-      },
-      {
         path: '/blog/about',
         name: 'Giới thiệu',
         component: './Blog/About',
+      },
+      {
+        path: '/blog/:slug',
+        component: './Blog/[slug]',
+        hideInMenu: true,
       },
       {
         path: '/blog/admin',

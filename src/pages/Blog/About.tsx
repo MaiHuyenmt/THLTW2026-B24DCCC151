@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Avatar, Row, Col, Tag, Breadcrumb, Typography } from 'antd';
-import { UserOutlined, MailOutlined, GlobalOutlined, GithubOutlined, HomeOutlined, ReadOutlined, CodeOutlined, HeartOutlined } from '@ant-design/icons';
+import { UserOutlined, MailOutlined, GlobalOutlined, GithubOutlined, HomeOutlined, ReadOutlined } from '@ant-design/icons';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -93,7 +93,6 @@ const About: React.FC = () => {
               }}
             >
               <Title level={3} style={{ color: '#1890ff', marginBottom: '16px' }}>
-                <HeartOutlined style={{ marginRight: '8px' }} />
                 Về tôi
               </Title>
               <Paragraph style={{
@@ -106,7 +105,6 @@ const About: React.FC = () => {
               </Paragraph>
 
               <Title level={4} style={{ color: '#1890ff', marginBottom: '12px' }}>
-                <CodeOutlined style={{ marginRight: '8px' }} />
                 Kỹ năng chuyên môn
               </Title>
               <div style={{ marginBottom: '24px' }}>
