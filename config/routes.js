@@ -33,6 +33,49 @@ module.exports = [
 		icon: 'AppstoreOutlined',
 		component: './ClubManagement',
 	},
+  // Blog
+  {
+    path: '/blog',
+    name: 'Blog',
+    icon: 'ReadOutlined',
+    routes: [
+      {
+        path: '/blog',
+        redirect: '/blog/home',
+      },
+      {
+        path: '/blog/home',
+        name: 'Trang chủ',
+        component: './Blog',
+      },
+      {
+        path: '/blog/:slug',
+        component: './Blog/[slug]',
+        hideInMenu: true,
+      },
+      {
+        path: '/blog/about',
+        name: 'Giới thiệu',
+        component: './Blog/About',
+      },
+      {
+        path: '/blog/admin',
+        name: 'Quản lý',
+        routes: [
+          {
+            path: '/blog/admin/posts',
+            name: 'Bài viết',
+            component: './Blog/Admin/Posts',
+          },
+          {
+            path: '/blog/admin/tags',
+            name: 'Thẻ',
+            component: './Blog/Admin/Tags',
+          },
+        ],
+      },
+    ],
+  },
   // Bai thuc hanh 01
   {
     path: '/game',
