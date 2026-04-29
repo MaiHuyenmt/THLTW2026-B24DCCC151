@@ -10,6 +10,12 @@ module.exports = [
     component: './TrangChu',
   },
   {
+    path: '/fitness',
+    name: 'Thể dục',
+    icon: 'HeartOutlined',
+    component: './Fitness',
+  },
+  {
     path: '/products',
     name: 'Quản lý sản phẩm',
     icon: 'ShopOutlined',

@@ -13,6 +13,12 @@
 		icon: 'HomeOutlined',
 	},
 	{
+		path: '/fitness',
+		name: 'Thể dục',
+		component: './Fitness',
+		icon: 'HeartOutlined',
+	},
+	{
 		path: '/gioi-thieu',
 		name: 'About',
 		component: './TienIch/GioiThieu',
