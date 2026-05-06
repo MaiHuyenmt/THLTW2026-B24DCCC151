@@ -34,6 +34,12 @@ module.exports = [
     component: './OrderManagement',
   },
   {
+    path: '/kanban',
+    name: 'Bảng Kanban',
+    icon: 'ProjectOutlined',
+    component: './Kanban',
+  },
+  {
 		path: '/club-management',
 		name: 'Quản lý CLB',
 		icon: 'AppstoreOutlined',

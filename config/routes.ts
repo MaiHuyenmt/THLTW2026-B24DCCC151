@@ -37,6 +37,12 @@
 		component: './TodoList',
 	},
 	{
+		path: '/kanban',
+		name: 'Kanban Board',
+		icon: 'ProjectOutlined',
+		component: './Kanban',
+	},
+	{
 		path: '/orders',
 		name: 'Quản lý đơn hàng',
 		icon: 'ShoppingCartOutlined',
